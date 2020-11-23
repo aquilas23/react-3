@@ -9,22 +9,24 @@ export default class Dash extends Component {
     }
 
     render() {
-        const {data}=this.props
-        console.log(data)
+        const mappedData = this.state.data.map((element,i) =>(
+            <div key={this.state.data.id}>
+                <p> {element.name.first}</p>
+                <p> {element.name.last}</p>
+                <p> {element.city}</p>
+                <p> {element.title}</p>
+                <p> {element.favoriteMovies}</p>
+                <button> Next</button>
+                <button> Prev</button>
 
-        // const mappedData = data.map((element,i) =>(
-        //     <div key={data.id}>
-        //         <p> {element.city}</p>
-        //         <p> {element.country}</p>
-        //     </div>
-
-        // ));
-
-        return (
-            <div>
-                {/* {mappedData} */}
-                {/* {this.props.data[0]} */}
             </div>
+
+        ));
+        return (
+
+        <div> {mappedData} </div>
         )
     }
 }
+
+
